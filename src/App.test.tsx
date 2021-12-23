@@ -27,4 +27,8 @@ describe("When everything is OK", () => {
   test("should select a label element by its text", () => {
     expect(screen.getByPlaceholderText('Example')).toBeInTheDocument();
   });
+
+  test("should select the input element by its role with QueryByRole", () => {
+    expect(screen.queryByRole('whatever')).toBeNull();
+  });
 });
