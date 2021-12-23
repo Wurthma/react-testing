@@ -12,6 +12,10 @@ For mock this project uses ts-jest locally to type mocked tests in TypeScript.
 
 `npm install -D ts-jest`
 
+## Debugging tests in VS Code
+
+See the documentation: https://create-react-app.dev/docs/debugging-tests/#debugging-tests-in-visual-studio-code
+
 ## Available Scripts
 
 In the project directory, you can run:
