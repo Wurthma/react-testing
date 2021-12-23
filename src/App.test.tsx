@@ -28,7 +28,7 @@ describe("When everything is OK", () => {
     expect(screen.getByPlaceholderText('Example')).toBeInTheDocument();
   });
 
-  test("should select the input element by its role with QueryByRole", () => {
+  test("should not find the role whatever", () => {
     expect(screen.queryByRole('whatever')).toBeNull();
   });
 });
