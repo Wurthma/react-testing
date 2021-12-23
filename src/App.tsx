@@ -24,7 +24,8 @@ function App() {
       <CustomInput value={text} onChange={handleChange}>
         Input:
       </CustomInput>
-      <p>{text || " ... "}</p>
+
+      <p>You typed: {text || "..."}</p>
     </div>
   );
 }

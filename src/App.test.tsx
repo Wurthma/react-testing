@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 import { getUser } from './get-user';
 import { mocked } from 'ts-jest/utils';
@@ -19,12 +18,18 @@ describe("When everything is OK", () => {
   });
 
   test("should select the children that is being passed to the CustomInput component", () => {
-    screen.getByText('Input:');
-    expect(screen.getByText('Input:')).toBeInTheDocument();
+    // Working with array of elements
+    screen.getAllByText('Input:');
   });
 
-  test("should select the input element by role", () => {
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
+  test("should select the input element by its role", () => {
+    // Working with array of elements
+    const results = screen.getAllByRole('textbox');
+    expect(results.length).toBe(1);
+    
+    results.forEach(element => {
+      expect(element).toBeInTheDocument();
+    });
   });
 
   test("should select a label element by its text", () => {
@@ -32,7 +37,13 @@ describe("When everything is OK", () => {
   });
 
   test("should select a label element by its text", () => {
-    expect(screen.getByPlaceholderText('Example')).toBeInTheDocument();
+    // Working with array of elements
+    const results = screen.getAllByPlaceholderText('Example');
+    expect(results.length).toBe(1);
+
+    results.forEach(element => {
+      expect(element).toBeInTheDocument();
+    });
   });
 
   test("should not find the role whatever", () => {
@@ -57,5 +68,24 @@ describe("When the component fetches the user successfully", () => {
     render(<App />);
     expect(screen.queryByText(/Username/)).toBeNull();
     expect(await screen.findByText(`Username: ${name}`)).toBeInTheDocument();
+  });
+});
+
+describe("When the user enters some text in the input element", () => {
+  beforeEach(async () => {
+    mockGetUser.mockClear();
+  });
+  
+  test("should display the text to the sreen", async () => {
+    render(<App />);
+    await waitFor(() => expect(mockGetUser).toHaveBeenCalledTimes(1));
+
+    expect(screen.getByText(/You typed: .../));
+
+    fireEvent.change(screen.getByRole('textbox'), {
+      target: { value: 'George'},
+    });
+
+    expect(screen.getByText(/You typed: George/));
   });
 });
