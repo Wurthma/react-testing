@@ -2,9 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## This project use Typescript template
+## Dependencys and project informations
+
+This project use Typescript template
 
 `npm create react-app <projectName> --template typescript`
+
+For mock this project uses ts-jest locally to type mocked tests in TypeScript.
+
+`npm install -D ts-jest`
 
 ## Available Scripts
 
