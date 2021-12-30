@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Testing with React Testing Library (RTL) & Jest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Study project on unit testing, functional and integration testing using RTL and Jest.
+
+In this project I compiled examples of some courses, tutorials and exercises that I carried out during my studies.
 
 ## Dependencys and project informations
 
