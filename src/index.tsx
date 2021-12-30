@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Pokemon from './components/Pokemon';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Pokemon />
   </React.StrictMode>,
   document.getElementById('root')
 );
