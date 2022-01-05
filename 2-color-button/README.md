@@ -12,6 +12,12 @@ For mock this project uses ts-jest locally to type mocked tests in TypeScript.
 
 `npm install -D ts-jest`
 
+ESLint and plugins
+
+`npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
+
+The basic configuration of ESLint are moved to .eslintrc.json file.
+
 ## Available Scripts
 
 In the project directory, you can run:
