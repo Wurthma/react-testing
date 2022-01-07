@@ -14,6 +14,16 @@ For mock this project uses ts-jest locally to type mocked tests in TypeScript.
 
 `npm install -D ts-jest`
 
+Bootstrap styling
+
+`npm install react-bootstrap boostrap`
+
+Instructions to add bootstrap `js` and `css` links can be found here:
+
+https://react-bootstrap.github.io/getting-started/introduction/#browser-globals
+
+https://react-bootstrap.github.io/getting-started/introduction/#css
+
 ESLint and plugins
 
 `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
