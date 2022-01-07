@@ -6,8 +6,8 @@ function SummaryForm() {
 
     return (
         <div>
-            <button disabled={checkboxState}>
-                Order
+            <button disabled={!checkboxState}>
+                Terms and conditions
             </button>
             <input
                 type="checkbox"
