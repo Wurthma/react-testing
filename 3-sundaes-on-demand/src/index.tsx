@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import SummaryForm from './pages/summary/summaryForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SummaryForm />
   </React.StrictMode>,
   document.getElementById('root')
 );
