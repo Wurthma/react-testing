@@ -1,23 +1,34 @@
 import { useState } from "react";
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function SummaryForm() {
-    const [checkboxState, setCheckboxState] = useState(false);
+    const [termConditionsChecked, setTermConditionsChecked] = useState(false);
+
+    const checkboxLabel = (
+        <span>
+            I agree to <span style={{ color: 'blue' }}>Terms and Conditions</span>
+        </span>
+    );
 
     return (
-        <div>
-            <button disabled={!checkboxState}>
-                Terms and conditions
-            </button>
-            <input
-                type="checkbox"
-                id="disable-button-checkbox"
-                defaultChecked={checkboxState}
-                aria-checked={checkboxState}
-                onClick={() => setCheckboxState(!checkboxState)}
-            />
-            <label htmlFor='disable-button-checkbox'>Disable button</label>
-        </div>
+        <Form>
+            <Form.Group controlId="terms-and-conditions">
+                <Form.Check
+                    type='checkbox'
+                    checked={termConditionsChecked}
+                    onChange={(e) => setTermConditionsChecked(e.target.checked)}
+                    label={checkboxLabel}
+                />
+            </Form.Group>
+            <Button
+                variant="primary"
+                type="submit"
+                disabled={!termConditionsChecked}
+            >
+                Confirm order
+            </Button>
+        </Form>
     );
 }
 
