@@ -18,6 +18,10 @@ Axios to consume Pokemon API
 
 `npm install axios`
 
+To fix error Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/filename.js":
+
+`npm i -D --exact jest-watch-typeahead@0.6.5`
+
 ## Debugging tests in VS Code
 
 See the documentation: https://create-react-app.dev/docs/debugging-tests/#debugging-tests-in-visual-studio-code

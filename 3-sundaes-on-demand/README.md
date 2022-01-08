@@ -24,6 +24,10 @@ https://react-bootstrap.github.io/getting-started/introduction/#browser-globals
 
 https://react-bootstrap.github.io/getting-started/introduction/#css
 
+User Event
+
+`npm install --save-dev @testing-library/user-event @testing-library/dom`
+
 ESLint and plugins
 
 `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`

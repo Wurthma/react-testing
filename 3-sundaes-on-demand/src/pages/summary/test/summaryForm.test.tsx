@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import SummaryForm from '../summaryForm';
+import userEvent from '@testing-library/user-event';
 
 describe('When render summaryForm component', () => {
     test('then checkbox should be unchecked by default', () => {
@@ -20,10 +21,31 @@ describe('When render summaryForm component', () => {
 
         const buttonElement = screen.getByRole('button', { name: /Confirm order/i });
 
-        fireEvent.click(checkboxElement);
+        userEvent.click(checkboxElement);
         expect(buttonElement).toBeEnabled();
 
-        fireEvent.click(checkboxElement);
+        userEvent.click(checkboxElement);
         expect(buttonElement).toBeDisabled();
     });
+});
+
+test('popover responds to hover', async () => {
+    render(<SummaryForm />);
+
+    // popover starts hidden
+    const nullPopover = screen.queryByText(/no ice cream will actually be delivered/i);
+    expect(nullPopover).not.toBeInTheDocument();
+
+    // popover appears upon mouseover of checkbox label
+    const termsAndConditions = screen.getByText(/terms and conditions/i);
+    userEvent.hover(termsAndConditions);
+
+    const popover = screen.getByText(/no ice cream will actually be delivered/i);
+    expect(popover).toBeInTheDocument();
+
+    // popover disappears when we mouse out
+    userEvent.unhover(termsAndConditions);
+    await waitForElementToBeRemoved(() =>
+        screen.queryByText(/no ice cream will actually be delivered/i)
+    );
 });

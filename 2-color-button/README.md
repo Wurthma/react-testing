@@ -18,6 +18,10 @@ ESLint and plugins
 
 The basic configuration of ESLint are moved to .eslintrc.json file.
 
+To fix error Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/filename.js":
+
+`npm i -D --exact jest-watch-typeahead@0.6.5`
+
 ## Available Scripts
 
 In the project directory, you can run:
