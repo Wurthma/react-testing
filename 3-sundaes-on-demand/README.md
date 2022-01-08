@@ -32,6 +32,8 @@ Mock Service Worker:
 
 `npm install msw`
 
+To learn more about MSW: https://mswjs.io/docs/getting-started/integrate/node
+
 ESLint and plugins
 
 `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
