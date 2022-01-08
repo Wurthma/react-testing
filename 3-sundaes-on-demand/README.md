@@ -1,6 +1,6 @@
 # Basics of testing with React Testing Library (RTL) & Jest
 
-This project has examples of how to work with mocks, show the basics of how to organize the files, screen query methods and how to work with async functions in tests.
+This project has examples of how to work with mocks using Mock Service Worker (MSW), show the basics of how to organize the files, screen query methods and how to work with async functions in tests.
 
 ## Dependencys and project informations
 
@@ -27,6 +27,10 @@ https://react-bootstrap.github.io/getting-started/introduction/#css
 User Event
 
 `npm install --save-dev @testing-library/user-event @testing-library/dom`
+
+Mock Service Worker:
+
+`npm install msw`
 
 ESLint and plugins
 
