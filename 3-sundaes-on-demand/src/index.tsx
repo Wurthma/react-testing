@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SummaryForm from './pages/summary/summaryForm';
+import Options from './pages/entry/Options';
 
 ReactDOM.render(
   <React.StrictMode>
     <SummaryForm />
+    <Options optionType='scoops' />
+    <Options optionType='toppings' />
   </React.StrictMode>,
   document.getElementById('root')
 );
