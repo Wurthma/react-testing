@@ -34,6 +34,10 @@ Mock Service Worker:
 
 To learn more about MSW: https://mswjs.io/docs/getting-started/integrate/node
 
+Axios
+
+`npm install axios`
+
 ESLint and plugins
 
 `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
